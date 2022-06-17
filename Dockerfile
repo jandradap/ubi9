@@ -4,6 +4,8 @@ RUN dnf update -y \
   && dnf install -y \
     ca-certificates \
     wget \
+    telnet \
     openssl \
   && dnf clean all \
-  && rm -rf /var/cache/yum
+  && rm -rf /var/cache/yum \
+  && update-crypto-policies --set LEGACY
