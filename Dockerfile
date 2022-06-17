@@ -7,4 +7,5 @@ RUN dnf update -y \
     telnet \
     openssl \
   && dnf clean all \
-  && rm -rf /var/cache/yum
+  && rm -rf /var/cache/yum \
+  && update-crypto-policies --set LEGACY
